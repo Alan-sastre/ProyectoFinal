@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeysGaming</title>
+    <link rel="stylesheet" href="../css/perfil.css" />
+    <link rel="shortcut icon" href="../imagenes/Navegacion/logo_steam-limpio.png" />
+  </head>
+
+  <header>
+    <!-- logo -->
+    <a href="../index.php">
+      <img class="logo-nav" src="../imagenes/Navegacion/logo_steam-limpio.png" alt="" />
+    </a>
+    <!-- Barra de navegacion -->
+    <nav>
+      <ul>
+        <div class="elemtosI">
+          <li>
+            <a href="../htmls/perfil.html"><img src="../imagenes/Navegacion/perfil-unscreen.gif" alt="" width="35" height="35" />Perfil</a>
+          </li>
+          <li class="carrito-wrapper">
+            <a href="../htmls/Carro.html" id="carrito-link"><img src="../imagenes/Navegacion/carro-de-la-compra-unscreen.gif" alt="" width="35" height="35" /> <samp id="carrito-count">carrito</samp></a>
+          </li>
+          <li><a href="../crud.php">Cuenta</a></li>
+          <li><a href="../php/cerrar_sesion.php">Cerrar sesion</a></li>
+          <li><a href="../tus_compras.php">Compras</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <div class="profile-container">
+      <div class="left-side">
+<form id="profile-form" action="../php/upload_profile.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+  <input type="file" id="profile-picture" name="profile-picture" accept="image/*" style="display: none" onchange="previewImage(event)" />
+  <label for="profile-picture" class="upload-btn">Subir Imagen de Perfil</label>
+  <img id="preview" style="display: none" />
+  <div class="form-group">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" />
+  </div>
+  <button type="submit">Guardar Perfil</button>
+</form>
+
+<script>
+  function validateForm() {
+    var profilePicture = document.getElementById('profile-picture').files[0];
+    if (!profilePicture) {
+      alert('Por favor, sube una imagen de perfil.');
+      return false;
+    }
+    return true;
+  }
+</script>
+
+    </div>
+
+    <div id="particles-js"></div>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="../scritps.js"></script>
+    <script>
+      function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          var preview = document.getElementById("preview");
+          preview.src = reader.result;
+          preview.style.display = "block";
+          localStorage.setItem("profilePicture", reader.result);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+
+      window.onload = function () {
+        var profilePicture = localStorage.getItem("profilePicture");
+        if (profilePicture) {
+          var preview = document.getElementById("preview");
+          preview.src = profilePicture;
+          preview.style.display = "block";
+        }
+      };
+    </script>
+
+    <div class="f">
+      <footer>
+        <p>©Alan Gabriel Sastre Briceño</p>
+        <p>Brayan Steven Garzon Montenegro</p>
+      </footer>
+    </div>
+  </body>
+</html>

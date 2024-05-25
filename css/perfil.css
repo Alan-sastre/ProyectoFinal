@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+  margin-top: 60px;
+}
+canvas {
+  display: block;
+}
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegúrate de que esté detrás de otros elementos */
+    background-color: #050708; /* Color de fondo de respaldo en caso de que no se cargue la imagen */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+header {
+  font-family: "Madimi One", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; /* Esto asegura que la barra de navegación esté por encima del contenido */
+}
+.elemtosI{
+  display: inline;
+  position: relative;
+  left: 90pc;
+}
+nav ul {
+  padding: 0.5%;
+  background-color: #050708;
+}
+
+nav li {
+  display: inline; /* Hace que los ítems del menú estén en una línea horizontal */
+  margin-right: 50px; /* Espacio entre los ítems del menú */
+}
+nav ul li {
+  transition: transform 0.3s ease;
+}
+
+
+nav a {
+  text-decoration: none; /*Quita el subrayado del texto */
+  color: #fff;
+  font-size: 21px;
+  position: relative;
+
+}
+
+
+.logo-nav {
+  background: transparent;
+  position: absolute;
+  width: 100px;
+  top: 1px;
+  left: 20px;
+  cursor: pointer;
+}
+
+body {
+  --sb-track-color: #050708;
+  --sb-thumb-color: ;
+  /* Aqui se le coloca el color de la barra por ahora esta transparente */
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 24px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 24px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.profile-container {
+  display: flex;
+  background-color: transparent; /* Color de fondo con opacidad */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.left-side,
+.right-side {
+  padding: 20px;
+}
+
+.left-side {
+  background-color: transparent; /* Color de fondo con opacidad */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-btn {
+  background-color: #007bff;
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+  bottom: 18pc;
+  left: 20pc;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+#preview {
+  width: 200px; /* Ancho de la imagen */
+  height: 200px; /* Alto de la imagen */
+  object-fit: cover; /* Ajusta la imagen para que se muestre completa */
+  border-radius: 50%; /* Redondea las esquinas de la imagen */
+}
+#change-password-btn {
+  background-color: #dc3545; /* Color rojo */
+  position: relative;
+  color: white; /* Texto blanco */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px; /* Espacio superior */
+  bottom: -8pc;
+  left: 1pc;
+}
+
+#change-password-btn:hover {
+  background-color: #c82333; /* Color rojo más oscuro al pasar el ratón */
+}
+
+.f {
+  background: transparent;
+  position: relative;
+  bottom: -24pc;
+  left: -25pc;
+}
