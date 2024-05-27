@@ -35,7 +35,36 @@ $compras_result = mysqli_query($conexion, $compras_query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tus Compras</title>
     <link rel="stylesheet" href="./css/compras.css">
-
+    <link rel="shortcut icon" href="../imagenes/Navegacion/logo_steam-limpio.png">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .content {
+            text-align: center;
+        }
+        header, nav, .content {
+            width: 100%;
+        }
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        header nav ul li {
+            list-style: none;
+            margin: 0 10px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,12 +92,11 @@ $compras_result = mysqli_query($conexion, $compras_query);
                             <img src="imagenes/Navegacion/notificacion-unscreen.gif" alt="" width="35" height="35">Ayuda
                         </a>
                     </li> -->
-                                    <li><a href="../crud.php">Cuenta</a></li>
-                <li><a href="./php/cerrar_sesion.php"><img src="gif/icons8-bloquear-64.png" alt="" width="35" height="35">Cerrar sesion</a></li>
-                <li>
-    <a href="tus_compras.php"> Compras
-</a>
-</li>
+                    <li><a href="./crud.php">Cuenta</a></li>
+                    <li><a href="./php/cerrar_sesion.php"><img src="gif/icons8-bloquear-64.png" alt="" width="35" height="35">Cerrar sesion</a></li>
+                    <li>
+                        <a href="tus_compras.php"> Compras</a>
+                    </li>
                 </div>
             </ul>
         </nav>
@@ -88,11 +116,11 @@ $compras_result = mysqli_query($conexion, $compras_query);
             <p>No has realizado compras este mes.</p>
         <?php endif; ?>
     </div>
-        <div id="particles-js"></div>
+    <div id="particles-js"></div>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     <script src="./scritps.js"></script>
 </body>
 </html>
 
-<?php mysqli_close($conexion); ?>
+<?php mysqli_close($conexion); ?>
